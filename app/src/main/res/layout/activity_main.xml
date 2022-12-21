@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- Here you put the rest of your current view-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageView"
+
+        />
+    <android.widget.Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        app:labelBehavior="floating"
+        />
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/spinner"
+        android:id="@+id/dodatki"
+        android:text="@string/accessories"
+        android:textSize="20dp"
+        />
+    <CheckBox
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="17dp"
+        android:id="@+id/checkbox1"
+        android:layout_below="@id/dodatki"
+        android:text="@string/mouse"
+
+        />
+    <android.widget.Spinner
+        android:layout_below="@id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_myszki"
+        android:layout_centerHorizontal="true"
+        />
+    <CheckBox
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:textSize="17dp"
+        android:id="@+id/checkbox2"
+        android:layout_below="@id/spinner_myszki"
+        android:text="@string/keyboard"
+        />
+    <android.widget.Spinner
+        android:layout_below="@id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_klawiatury"
+        android:layout_centerHorizontal="true"
+        />
+    <CheckBox
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:textSize="17dp"
+        android:id="@+id/checkbox3"
+        android:layout_below="@id/spinner_klawiatury"
+        android:text="@string/Camera"
+        />
+    <android.widget.Spinner
+        android:layout_below="@id/checkbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_kamerki"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_below="@id/spinner_kamerki"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/price"
+        android:id="@+id/cena"
+        />
+    <Button
+        android:layout_marginLeft="20dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:id="@+id/button_oblicz"
+        android:text="Calculate"
+        android:layout_below="@id/cena"
+        android:layout_gravity="bottom"
+        />
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:id="@+id/button_send"
+        android:text="Send order"
+        android:layout_toRightOf="@id/button_oblicz"
+        android:layout_gravity="bottom"
+        android:layout_below="@+id/cena"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="20dp"
+        />
+</RelativeLayout>
+</ScrollView>

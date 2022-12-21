@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zaliczeniowy</string>
+    <string name="dialog_name">O programie</string>
+    <string name="dialog_message">Stworzone przez Szymona Banaszka 4Pp</string>
+    <string name="subject">temat</string>
+    <string name="text_accounts">Wszytstkie konta</string>
+    <string name="hint_name">Nazwa</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">hasło</string>
+    <string name="hint_confirm_password">potwierdź hasło</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Rejestracja</string>
+    <string name="error_message_name">Podaj pełne Imie</string>
+    <string name="error_message_email">Podaj poprawny e-mail</string>
+    <string name="error_message_age">Podaj wiek</string>
+    <string name="error_message_password">Podaj hasło</string>
+    <string name="success_message">Rejestracja zakończona sukcesem</string>
+    <string name="text_not_member">Nie masz jeszcze konta? Stwórz tutaj</string>
+    <string name="text_already_member">Jesteś już członkiem? Zaloguj się</string>
+    <string name="error_email_exists">Podany E-mail istnieje</string>
+    <string name="error_password_match">Hasła nie są identyczne</string>
+    <string name="error_valid_email_password">Nie prawidłowy E-mail bądź hasło</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="text_hello">Witam</string>
+    <string name="text_title">Android Tutorial</string>
+    <string name="mouse">Myszki</string>
+    <string name="keyboard">klawiatura</string>
+    <string name="Camera">Kamera internetowa</string>
+    <string name="accessories">Dodatki</string>
+    <string name="price">cena</string>
+</resources>

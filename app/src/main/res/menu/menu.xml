@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/poland"
+        android:id="@+id/poland"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/poland">
+    </item>
+    <item android:title="enland"
+        android:id="@+id/england"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/wielka_brytania">
+    </item>
+    <group>
+        <item android:id="@+id/Main_page"
+            android:title="Strona Główna"/>
+        <item android:id="@+id/order_list"
+            android:title="Historia zamówień"/>
+        <item android:id="@+id/Zaloguj"
+            android:title="Zaloguj"/>
+        <item android:id="@+id/about"
+            android:title="O programie"/>
+    </group>
+</menu>
