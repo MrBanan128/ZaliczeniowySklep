@@ -13,7 +13,7 @@
             android:src="@drawable/ic_launcher_background"
             />
         <TextView
-            android:id="@+id/h1"
+            android:id="@+id/Text_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -27,10 +27,10 @@
             android:textStyle="bold|italic"
             />
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/Price_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/h1"
+        android:layout_below="@id/Text_list"
         android:layout_toRightOf="@id/imageView"
         android:text="Price"
         android:padding="5dp"

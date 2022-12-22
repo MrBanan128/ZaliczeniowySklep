@@ -35,12 +35,12 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         Log.v(TAG,"Create działa");
-//        sqLiteDatabase.execSQL(CREATE_USER_TABLE);
-//        sqLiteDatabase.execSQL(CREATE_MOUSE);
-//        sqLiteDatabase.execSQL(CREATE_KEYBOARD);
-//        sqLiteDatabase.execSQL(CREATE_CAMERA);
-//        sqLiteDatabase.execSQL(CREATE_SET);
-//        sqLiteDatabase.execSQL(CREATE_ORDER);
+        sqLiteDatabase.execSQL(CREATE_USER_TABLE);
+        sqLiteDatabase.execSQL(CREATE_MOUSE);
+        sqLiteDatabase.execSQL(CREATE_KEYBOARD);
+        sqLiteDatabase.execSQL(CREATE_CAMERA);
+        sqLiteDatabase.execSQL(CREATE_SET);
+        sqLiteDatabase.execSQL(CREATE_ORDER);
 
 
     }
@@ -50,38 +50,19 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         Log.v(TAG,"Działa");
 
-        //sqLiteDatabase.execSQL(methodsInsert.insertUser(1, "Test1","admin@gmail.com", "admin"));
-
-        sqLiteDatabase.execSQL(methodsInsert.insertMouse(1, "rival100", R.drawable.rival1, 129));
-        sqLiteDatabase.execSQL(methodsInsert.insertMouse(2, "rival3", R.drawable.rival3, 139));
-        sqLiteDatabase.execSQL(methodsInsert.insertMouse(3, "rival9", R.drawable.rival9, 499));
 
 
-        sqLiteDatabase.execSQL(methodsInsert.insertKeyboard(1, "Apex 3", R.drawable.klawiatura1, 299));
-        sqLiteDatabase.execSQL(methodsInsert.insertKeyboard(2, "Apex Gaming", R.drawable.klawiatura2, 319));
-        sqLiteDatabase.execSQL(methodsInsert.insertKeyboard(3, "Apex 7", R.drawable.klawiatura3, 799));
-
-        sqLiteDatabase.execSQL(methodsInsert.insertCamera(1, "LOGITECH HD Webcam C270", R.drawable.kamera1, 149));
-        sqLiteDatabase.execSQL(methodsInsert.insertCamera(2, "Logitech Streamcam", R.drawable.kamera2, 435));
-        sqLiteDatabase.execSQL(methodsInsert.insertCamera(3, "AUKEY PC-LM1E", R.drawable.kamera3, 116));
-
-
-        sqLiteDatabase.execSQL(methodsInsert.insertSet(1, "Intel Core i5 12400 ", R.drawable.zestaw1, 3824));
-        sqLiteDatabase.execSQL(methodsInsert.insertSet(2, "Intel Core i7 11700 ", R.drawable.zestaw2, 5832));
-        sqLiteDatabase.execSQL(methodsInsert.insertSet(3, "Ryzen 9 3900X ", R.drawable.zestaw3, 7764));
-
-//        sqLiteDatabase.execSQL(DROP_USER_TABLE);
-//        sqLiteDatabase.execSQL(DELETE_MOUSE);
-//        sqLiteDatabase.execSQL(DELETE_KEYBOARD);
-//        sqLiteDatabase.execSQL(DELETE_CAMERA);
-//        sqLiteDatabase.execSQL(DELETE_SET);
-//        sqLiteDatabase.execSQL(DROP_ORDER);
+        sqLiteDatabase.execSQL(DROP_USER_TABLE);
+        sqLiteDatabase.execSQL(DELETE_MOUSE);
+        sqLiteDatabase.execSQL(DELETE_KEYBOARD);
+        sqLiteDatabase.execSQL(DELETE_CAMERA);
+        sqLiteDatabase.execSQL(DELETE_SET);
+        sqLiteDatabase.execSQL(DROP_ORDER);
         onCreate(sqLiteDatabase);
-//        sqLiteDatabase.close();
     }
 
 
-    private class Mouse implements BaseColumns {
+    public class Mouse implements BaseColumns {
         public static final String MYSZ_TABLE = "Myszka";
         public static final String COLUMN_NAME_Rival_ID = "Myszka_Id";
         public static final String COLUMN_NAME_Rival = "Myszka ";
@@ -89,14 +70,14 @@ public class DbHelper extends SQLiteOpenHelper {
         public static final String COLUMN_NAME_Rival_PRICE = "Cena_Myszki ";
     }
 
-    private class Set implements BaseColumns {
+    public class Set implements BaseColumns {
         public static final String ZEST_TABLE = "Zestaw";
         public static final String COLUMN_NAME_Zestaw_ID = "Zestaw_Id";
         public static final String COLUMN_NAME_Zestaw = "Zestaw ";
         public static final String COLUMN_NAME_Zestaw_PHOTO = "Zdjęcie_Zestawu ";
         public static final String COLUMN_NAME_Zestaw_PRICE = "Cena_Zestawu ";
     }
-    private class Keyboard implements BaseColumns {
+    public class Keyboard implements BaseColumns {
         public static final String KLAW_TABLE = "Klawiatury";
         public static final String COLUMN_NAME_Klawiatura_ID = "Klawiatura_Id";
         public static final String COLUMN_NAME_Klawiatura = "Klawiatura ";
@@ -104,17 +85,15 @@ public class DbHelper extends SQLiteOpenHelper {
         public static final String COLUMN_NAME_Klawiatura_PRICE = "Cena_Klawiatury ";
 
     }
-    private class Camera implements BaseColumns {
+    public class Camera implements BaseColumns {
         public static final String KAM_TABLE = "Kamery";
         public static final String COLUMN_NAME_Kamera_ID = "Kamera_Id";
         public static final String COLUMN_NAME_Kamera = "Kamery ";
         public static final String COLUMN_NAME_Kamera_PHOTO = "Zdjęcie_Kamer ";
         public static final String COLUMN_NAME_Kamera_PRICE = "Cena_Kamer ";
-
-
     }
 
-    private static class user implements BaseColumns {
+    public static class user implements BaseColumns {
         public static final String TABLE_USER = "user";
         public static final String COLUMN_USER_ID = "user_id"; //integer
         public static final String COLUMN_USER_NAME = "user_name"; //text unique
@@ -213,33 +192,9 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             super.onDowngrade(db, oldVersion, newVersion);
     }
-    private static class methodsInsert{
-        private static String insertMouse(int Id_mouse , String mouse, int image, int price){
-            return "INSERT INTO " + Mouse.MYSZ_TABLE + " (" +
-                    Mouse.COLUMN_NAME_Rival_ID + ", " + Mouse.COLUMN_NAME_Rival + ", " + Mouse.COLUMN_NAME_Rival_PHOTO + ", " + Mouse.COLUMN_NAME_Rival_PRICE + ") " +
-                    "VALUES ("+Id_mouse+", '"+mouse+"', "+image+", '"+price+"');";
-        }
-        private static String insertKeyboard(int Id_keyboard , String keyboard, int image, int price){
-            return "INSERT INTO " + Keyboard.KLAW_TABLE + " (" +
-                    Keyboard.COLUMN_NAME_Klawiatura_ID + ", " + Keyboard.COLUMN_NAME_Klawiatura + ", " + Keyboard.COLUMN_NAME_Klawiatura_PHOTO + ", " + Keyboard.COLUMN_NAME_Klawiatura_PRICE + ") " +
-                    "VALUES ("+Id_keyboard+", '"+keyboard+"', "+image+", '"+price+"');";
-        }
-        private static String insertCamera(int Id_camera , String camera, int image, int price){
-            return "INSERT INTO " + Camera.KAM_TABLE + " (" +
-                    Camera.COLUMN_NAME_Kamera_ID + ", " + Camera.COLUMN_NAME_Kamera + ", " + Camera.COLUMN_NAME_Kamera_PHOTO + ", " + Camera.COLUMN_NAME_Kamera_PRICE + ") " +
-                    "VALUES ("+Id_camera+", '"+camera+"', "+image+", '"+price+"');";
-        }
-        private static String insertSet(int Id_set , String set, int image, int price){
-            return "INSERT INTO " + Set.ZEST_TABLE + " (" +
-                    Set.COLUMN_NAME_Zestaw_ID + ", " + Set.COLUMN_NAME_Zestaw + ", " + Set.COLUMN_NAME_Zestaw_PHOTO + ", " + Set.COLUMN_NAME_Zestaw_PRICE + ") " +
-                    "VALUES ("+Id_set+", '"+set+"', "+image+", '"+price+"');";
-        }
-        private static String insertUser(int Id_user , String user, String email, String password){
-            return "INSERT INTO " + DbHelper.user.TABLE_USER + " (" +
-                    DbHelper.user.COLUMN_USER_ID + ", " + DbHelper.user.COLUMN_USER_NAME + ", " + DbHelper.user.COLUMN_USER_EMAIL + ", " + DbHelper.user.COLUMN_USER_PASSWORD+ ") " +
-                    "VALUES ("+Id_user+", '"+user+"', "+email+", '"+password+"');";
-        }
-    }
+
+
+
 
 
     public void addUser(User user) {
