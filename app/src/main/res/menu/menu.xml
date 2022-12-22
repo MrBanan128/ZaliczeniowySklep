@@ -14,8 +14,6 @@
     <group>
         <item android:id="@+id/Main_page"
             android:title="Strona Główna"/>
-        <item android:id="@+id/order_list"
-            android:title="Historia zamówień"/>
         <item android:id="@+id/Zaloguj"
             android:title="Zaloguj"/>
         <item android:id="@+id/about"

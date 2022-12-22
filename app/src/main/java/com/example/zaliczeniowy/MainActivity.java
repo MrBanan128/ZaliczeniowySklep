@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         if(!cursor.moveToFirst()) {
             Log.v(TAG,"Dodaje");
             db.execSQL(methodsInsert.insertMouse(1, "rival100", R.drawable.rival1, 129));
-
             db.execSQL(methodsInsert.insertMouse(2, "rival3", R.drawable.rival3, 139));
             db.execSQL(methodsInsert.insertMouse(3, "rival9", R.drawable.rival9, 499));
 
@@ -416,10 +415,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.Main_page:
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.order_list:
-                intent = new Intent(MainActivity.this, OrderList.class);
                 startActivity(intent);
                 break;
             case R.id.Zaloguj:

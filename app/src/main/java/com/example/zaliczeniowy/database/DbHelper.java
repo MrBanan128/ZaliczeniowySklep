@@ -42,15 +42,12 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(CREATE_SET);
         sqLiteDatabase.execSQL(CREATE_ORDER);
 
-
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         Log.v(TAG,"Działa");
-
-
 
         sqLiteDatabase.execSQL(DROP_USER_TABLE);
         sqLiteDatabase.execSQL(DELETE_MOUSE);
